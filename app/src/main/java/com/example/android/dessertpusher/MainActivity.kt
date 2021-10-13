@@ -28,6 +28,7 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.example.android.dessertpusher.databinding.ActivityMainBinding
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity(), LifecycleObserver {
 
@@ -74,7 +75,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         binding.dessertButton.setOnClickListener {
             onDessertClicked()
         }
+
         Log.i("MainActivity","OnCreate called")
+
         // Set the TextViews to the right values
         binding.revenue = revenue
         binding.amountSold = dessertsSold
@@ -153,6 +156,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     @SuppressLint("LogNotTimber")
     override fun onStart() {
         super.onStart()
-        Log.i("MainActivity","OnStart Called")
+//        Log.i("MainActivity","OnStart Called")
+        Timber.i("Onstart Called")
+
     }
 }
